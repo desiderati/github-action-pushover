@@ -1,6 +1,6 @@
 {
   "name": "github-action-pushover",
-  "version": "v1",
+  "version": "1.0.0",
   "private": true,
   "description": "Push build status notifications using Pushover App.",
   "main": "dist/index.js",
