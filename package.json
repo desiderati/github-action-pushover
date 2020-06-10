@@ -1,0 +1,55 @@
+{
+  "name": "github-action-pushover",
+  "version": "v1",
+  "private": true,
+  "description": "Push build status notifications using Pushover App.",
+  "main": "dist/index.js",
+  "author": "Felipe Desiderati <felipedesiderati@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/desiderati/github-action-pushover.git"
+  },
+  "keywords": [
+    "actions",
+    "node",
+    "setup"
+  ],
+  "scripts": {
+    "clean": "rimraf target",
+    "compile": "tsc --build",
+    "lint": "eslint --ext ts src test",
+    "copy:paste:detector": "jscpd src test",
+    "test:unit": "TS_NODE_PROJECT=tsconfig.base.json mocha",
+    "test:unit:coverage": "TS_NODE_PROJECT=tsconfig.base.json nyc mocha",
+    "build": "ncc build",
+    "all": "npm run clean && npm run compile && npm run lint && npm run copy:paste:detector && npm run test:unit && npm run build"
+  },
+  "dependencies": {
+    "@actions/core": "1.2.4",
+    "@actions/github": "3.0.0",
+    "got": "9.6.0",
+    "tslib": "2.0.0"
+  },
+  "devDependencies": {
+    "@types/chai": "4.2.11",
+    "@types/got": "9.6.11",
+    "@types/mocha": "7.0.2",
+    "@types/sinon": "9.0.4",
+    "@typescript-eslint/eslint-plugin": "2.34.0",
+    "@typescript-eslint/parser": "2.34.0",
+    "@zeit/ncc": "0.22.3",
+    "chai": "4.2.0",
+    "eslint": "7.1.0",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-mocha": "7.0.0",
+    "eslint-plugin-prettier": "3.1.3",
+    "jscpd": "3.2.1",
+    "mocha": "7.2.0",
+    "nyc": "15.1.0",
+    "prettier": "2.0.5",
+    "sinon": "9.0.2",
+    "ts-node": "8.10.2",
+    "typescript": "3.9.5"
+  }
+}

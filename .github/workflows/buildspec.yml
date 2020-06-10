@@ -1,0 +1,57 @@
+name: Build
+
+on:
+  # It triggers the workflow when executing the push or pull request operation, but only for the master branch.
+  push:
+    branches:
+      - master
+
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+
+      - name: Cache Node.js Modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.OS }}-node-
+            ${{ runner.OS }}-
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Check Source Code
+        run: |
+          npm run lint
+          npm run copy:paste:detector
+
+      - name: Compile Source Code
+        run: npm run compile
+
+      - name: Run Tests
+        run: npm run test:unit:coverage
+
+      - name: Build the Application
+        run: npm run build
+
+      - name: Push Build Status Notifications
+        if: ${{ always() }}
+        uses: ./
+        with:
+          job-status: ${{ job.status }}
+          pushover-api-token: ${{ secrets.PUSHOVER_API_TOKEN }}
+          pushover-user-key: ${{ secrets.PUSHOVER_USER_KEY }}

@@ -1,0 +1,23 @@
+name: GitHub Action for Pushover Notifications
+author: Felipe Desiderati
+description: Push build status notifications using Pushover App.
+inputs:
+  job-status:
+    description: The job status. Use the expression {{ job.status }} to set it.
+    required: true
+
+  pushover-api-token:
+    description: To begin using the Pushover API to send notifications, you must configure the API token.
+    required: true
+
+  pushover-user-key:
+    description: To receive notifications from a Pushover-powered application, service, or website, you need to configure your user key.
+    required: true
+
+runs:
+  using: node12
+  main: dist/index.js
+
+branding:
+  icon: zap
+  color: blue

@@ -1,0 +1,34 @@
+{
+  "extends": ["config:base"],
+  "commitMessagePrefix": "⬆️ ",
+  "labels": ["renovate"],
+  "rebaseStalePrs": false,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "automerge": true
+  },
+  "nvm": {
+    "enabled": false
+  },
+  "packageRules": [
+    {
+      "depTypeList": ["dependencies", "devDependencies"],
+      "updateTypes": ["minor", "patch"],
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "packagePatterns": ["^@types/"],
+      "groupName": "definitely typed packages",
+      "automerge": true,
+      "automergeType": "branch"
+    },
+    {
+      "packagePatterns": ["eslint"],
+      "groupName": "eslint packages",
+      "extends": ["schedule:earlyMondays"],
+      "automerge": true,
+      "automergeType": "branch"
+    }
+  ]
+}
