@@ -26,12 +26,15 @@ import { run } from '../src/run';
 function createCore() {
   const getInput = sinon.stub();
   getInput.withArgs('job-status', { required: true }).returns('job-status');
+
   getInput
     .withArgs('pushover-api-token', { required: true })
     .returns('pushover-api-token');
+
   getInput
     .withArgs('pushover-user-key', { required: true })
     .returns('pushover-user-key');
+
   return {
     getInput,
     info: sinon.fake(),
@@ -75,6 +78,7 @@ suite('run', function () {
     const github = createGithub();
     const got = createGot();
     await doRun(core, github, got);
+
     sinon.assert.calledWith(
       got.post,
       'https://api.pushover.net/1/messages.json?token=pushover-api-token&user=pushover-user-key&title=Repository: Unknown Repository Name&message=Job Status: job-status',
@@ -86,6 +90,7 @@ suite('run', function () {
     const github = createGithub();
     const got = createGot();
     await doRun(core, github, got);
+
     sinon.assert.calledWith(core.setOutput, 'statusCode', 200);
     sinon.assert.calledWith(core.setOutput, 'body', 'Just a simple test!');
   });
@@ -96,6 +101,7 @@ suite('run', function () {
     const got = {
       post: sinon.fake.throws(new Error('Test error')),
     };
+
     try {
       await doRun(core, github, got);
       assert.fail();

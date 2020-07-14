@@ -32,6 +32,7 @@ jobs:
             ${{ runner.OS }}-
 
       - name: Install Dependencies
+        # https://stackoverflow.com/questions/52499617/what-is-the-difference-between-npm-install-and-npm-ci
         run: npm ci
 
       - name: Check Source Code
