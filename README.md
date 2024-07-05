@@ -3,7 +3,7 @@
 [![Build Status](https://github.com/desiderati/github-action-pushover/workflows/Build/badge.svg)](https://github.com/desiderati/github-action-pushover/actions)
 [![Version](https://img.shields.io/badge/Version-v1-red.svg)](https://github.com/desiderati/github-action-pushover/releases)
 [![GitHub Stars](https://img.shields.io/github/stars/desiderati/github-action-pushover.svg?label=GitHub%20Stars)](https://github.com/desiderati/github-action-pushover/)
-[![LICENSE](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://github.com/desiderati/github-action-pushover/blob/master/LICENSE) 
+[![LICENSE](https://img.shields.io/badge/License-MIT-lightgrey.svg)](https://github.com/desiderati/github-action-pushover/blob/master/LICENSE)
 
 ## Documentation
 
@@ -44,7 +44,8 @@ jobs:
           pushover-user-key: ${{ secrets.PUSHOVER_USER_KEY }}
 ```
 
-3. Add the Pushover API Token as `PUSHOVER_API_TOKEN` and user key as `PUSHOVER_USER_KEY` in *GitHub Repository > Settings > Secrets*.
+3. Add the Pushover API Token as `PUSHOVER_API_TOKEN` and user key as `PUSHOVER_USER_KEY` in *GitHub Repository >
+   Settings > Secrets*.
 
 4. Validate if you received the notification.
 
@@ -52,13 +53,18 @@ jobs:
 
 ## Versioning
 
-For transparency into our release cycle and in striving to maintain backward compatibility, GitHub Action for Pushover Notifications is maintained under the [Semantic Versioning guidelines](https://semver.org/) and the release process is predictable and business-friendly.
+For transparency into our release cycle and in striving to maintain backward compatibility, GitHub Action for Pushover
+Notifications is maintained under the [Semantic Versioning guidelines](https://semver.org/) and the release process is
+predictable and business-friendly.
 
-See the [Releases section of our GitHub project](https://github.com/desiderati/github-action-pushover/releases) for change logs for each release version of GitHub Action for Pushover Notifications. It contains summaries of the most noteworthy changes made in each release.
+See the [Releases section of our GitHub project](https://github.com/desiderati/github-action-pushover/releases) for
+change logs for each release version of GitHub Action for Pushover Notifications. It contains summaries of the most
+noteworthy changes made in each release.
 
 ## Bug tracker
 
-If you have any suggestions, bug reports, or annoyances please report them to our issue tracker at https://github.com/desiderati/github-action-pushover/issues
+If you have any suggestions, bug reports, or annoyances please report them to our issue tracker
+at https://github.com/desiderati/github-action-pushover/issues
 
 ## License
 

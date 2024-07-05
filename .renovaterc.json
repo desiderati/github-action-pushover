@@ -1,7 +1,11 @@
 {
-  "extends": ["config:base"],
+  "extends": [
+    "config:base"
+  ],
   "commitMessagePrefix": "⬆️ ",
-  "labels": ["renovate"],
+  "labels": [
+    "renovate"
+  ],
   "rebaseStalePrs": false,
   "lockFileMaintenance": {
     "enabled": true,
@@ -12,21 +16,33 @@
   },
   "packageRules": [
     {
-      "depTypeList": ["dependencies", "devDependencies"],
-      "updateTypes": ["minor", "patch"],
+      "depTypeList": [
+        "dependencies",
+        "devDependencies"
+      ],
+      "updateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true,
       "automergeType": "branch"
     },
     {
-      "packagePatterns": ["^@types/"],
+      "packagePatterns": [
+        "^@types/"
+      ],
       "groupName": "definitely typed packages",
       "automerge": true,
       "automergeType": "branch"
     },
     {
-      "packagePatterns": ["eslint"],
+      "packagePatterns": [
+        "eslint"
+      ],
       "groupName": "eslint packages",
-      "extends": ["schedule:earlyMondays"],
+      "extends": [
+        "schedule:earlyMondays"
+      ],
       "automerge": true,
       "automergeType": "branch"
     }

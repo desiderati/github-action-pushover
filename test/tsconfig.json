@@ -4,5 +4,9 @@
     "outDir": "../target/test",
     "rootDir": "."
   },
-  "references": [{ "path": "../src" }]
+  "references": [
+    {
+      "path": "../src"
+    }
+  ]
 }

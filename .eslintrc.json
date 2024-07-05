@@ -14,7 +14,10 @@
     "prettier/@typescript-eslint",
     "plugin:mocha/recommended"
   ],
-  "plugins": ["@typescript-eslint", "mocha"],
+  "plugins": [
+    "@typescript-eslint",
+    "mocha"
+  ],
   "env": {
     "node": true
   },
